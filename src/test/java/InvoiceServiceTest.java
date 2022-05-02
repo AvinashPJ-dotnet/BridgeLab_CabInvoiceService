@@ -29,8 +29,9 @@ public class InvoiceServiceTest {
                 new Ride(0.1, 1),
                 new Ride(1.0, 5)
         };
-        double fare = invoiceGenerator.calculateFare(rides);
-        Assertions.assertEquals(45,fare);
+        InvoiceSummary fare = invoiceGenerator.calculateFare(rides);
+        InvoiceSummary expected = new InvoiceSummary(3, 45);
+        Assertions.assertEquals(expected, fare);
     }
 
 }
